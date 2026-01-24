@@ -15,6 +15,7 @@
             <input type="text" name="phone" class="form-control form-control-lg" required autofocus>
         </div>
         <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Save and Continue</button>
+        <a href="dashboard" class="btn btn-outline-primary w-100 py-2 mt-3 fw-bold">Back</a>
     </form>
 </div>
 @endsection

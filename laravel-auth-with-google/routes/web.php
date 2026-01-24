@@ -9,8 +9,9 @@ Route::get('/', function () {
 });
 Route::middleware('guest')->group(function(){
     Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
-    Route::get('/login', [LoginController::class, 'showLoginFrom'])->name('login');
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 });
+Route::get('/profile', [LoginController::class, 'showProfile'])->name('profile');
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::get('/dashboard', function (){
