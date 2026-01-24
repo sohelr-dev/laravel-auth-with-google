@@ -22,7 +22,7 @@ A Laravel authentication system built with Blade, featuring manual signup/login 
 * Blade Templates
 * Laravel Socialite
 * MySQL
-* Bootstrap (optional)
+* Bootstrap 
 
 ---
 
