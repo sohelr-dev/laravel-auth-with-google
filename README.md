@@ -101,16 +101,6 @@ http://127.0.0.1:8000
 
 ---
 
-## 📌 Future Improvements
-
-* Email verification
-* Password reset
-* Role-based authentication
-* API authentication (Sanctum/JWT)
-* Vue or React frontend integration
-
----
-
 ## 📄 License
 
 This project is open-source and available under the MIT License.
