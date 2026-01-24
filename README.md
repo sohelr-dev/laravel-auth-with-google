@@ -1,5 +1,5 @@
 # laravel-auth-with-google
-# Laravel Auth with Google
+# OAuth 2.0
 
 A Laravel authentication system built with Blade, featuring manual signup/login and Google OAuth (Gmail).
 
