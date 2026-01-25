@@ -8,7 +8,7 @@
     <h4 class="fw-bold">Finish Setting Up</h4>
     <p class="text-muted">Please provide your phone number to continue.</p>
 
-    <form action="{{ url('complete-profile') }}" method="POST" class="text-start">
+    <form action="{{ route('profile.complete') }}" method="POST" class="text-start">
         @csrf
         <div class="mb-4">
             <label class="form-label">Phone Number</label>
