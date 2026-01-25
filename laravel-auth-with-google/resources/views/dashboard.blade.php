@@ -3,10 +3,18 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-12 text-end">
+            <div class="col-12 text-end d-flex justify-content-end gap-2 py-3">
                 <a class="btn btn-primary" href="{{ route('profile') }}">
                     My Profile
                 </a>
+                <a class="btn btn-danger" href="#"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Logout
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
         <div class="row justify-content-center align-items-center" style="min-height: 70vh;">
@@ -19,7 +27,7 @@
                 @endif
 
                 <h1 class="text-primary fw-bold">
-                    Welcome to the Dashboard
+                    Welcome  to {{$user->name }} Dashboard
                 </h1>
 
                 <p class="text-muted fs-5">
@@ -29,5 +37,4 @@
             </div>
         </div>
     </div>
-
 @endsection

@@ -36,4 +36,19 @@ class LoginController extends Controller
 
         return back()->withErrors(['password' => 'This password is incorrect.'])->withInput();
     }
+
+    public function logout(Request $request)
+    {
+        // 1. Log the user out of the application
+        Auth::logout();
+
+        // 2. Invalidate the user's session
+        $request->session()->invalidate();
+
+        // 3. Regenerate the CSRF token to prevent attacks
+        $request->session()->regenerateToken();
+
+        // 4. Redirect to login page
+        return redirect('/login');
+    }
 }
