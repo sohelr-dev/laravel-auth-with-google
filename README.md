@@ -92,7 +92,8 @@ http://127.0.0.1:8000
 
 ## 📸 Screenshots
 
-> Add screenshots of:
+> Screenshots will be added soon.
+The following views are implemented:
 
 * Signup form
 * Login form
