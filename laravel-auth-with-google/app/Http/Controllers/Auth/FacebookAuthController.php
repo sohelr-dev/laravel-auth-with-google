@@ -22,7 +22,7 @@ class FacebookAuthController extends Controller
     public function handleFacebookCallback()
     {
         try {
-            $facebookUser = Socialite::driver('google')->user();
+            $facebookUser = Socialite::driver('facebook')->user();
             // dd($facebookUser);
 
             // Logic: Find existing user by email
