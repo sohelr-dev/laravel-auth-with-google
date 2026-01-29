@@ -8,6 +8,10 @@
             <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" class="me-2">
             Continue with Google
         </a>
+        <a href="{{ url('auth/facebook') }}" class="btn btn-facebook w-100 py-2 mb-2">
+            <img src="https://img.freepik.com/free-psd/social-media-logo-design_23-2151296987.jpg" width="40" class="me-2">
+            Continue with Facebook
+        </a>
 
         <div class="divider text-muted small">OR</div>
 

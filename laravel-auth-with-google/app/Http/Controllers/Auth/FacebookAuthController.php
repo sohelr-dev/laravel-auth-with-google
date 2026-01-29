@@ -26,7 +26,9 @@ class FacebookAuthController extends Controller
             // dd($facebookUser);
 
             // Logic: Find existing user by email
-            $user = User::where('email', $facebookUser->email)->first();
+            $user = User::where('facebook_id', $facebookUser->id)
+                    ->orWhere('email', $facebookUser->email)
+                    ->first();
             // dd($user);
 
             // link facebook id if not already present
@@ -51,9 +53,7 @@ class FacebookAuthController extends Controller
             //redirect  based on whether custom input (phone) extra
             //profile details are needed
 
-            return empty($user->phone) ?
-                redirect()->route('profile') :
-                redirect()->intended('/dashboard');
+            return redirect()->intended('/dashboard');
         } catch (Exception $e) {
             return redirect('/login')->with('error', 'Facebook authentication failed. Please try again.');
         }

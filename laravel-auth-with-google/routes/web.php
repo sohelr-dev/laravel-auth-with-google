@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\FacebookAuthController;
 use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -15,9 +16,12 @@ Route::middleware('guest')->group(function () {
 
     // Google Authentication
     Route::get('auth/google', [GoogleAuthController::class, 'redirectToGoogle'])->name('google.login');
+    //facebook Authentication
+    Route::get('auth/facebook',[FacebookAuthController::class, 'redirectToFacebook'])->name('facebook.login');
 });
-
+// Google OAuth callback route
 Route::get('auth/google/callback', [GoogleAuthController::class, 'handleGoogleCallback']);
+Route::get('auth/facebook/callback', [FacebookAuthController::class, 'handleFacebookCallback']);
 
 Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [LoginController::class, 'login']);
