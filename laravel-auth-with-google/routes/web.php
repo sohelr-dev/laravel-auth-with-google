@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\GoogleAuthController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PackageController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -32,5 +33,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [LoginController::class, 'showProfile'])->name('profile');
     Route::post('/profile', [GoogleAuthController::class, 'completeProfile'])->name('profile.complete');
     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/packages', [PackageController::class, 'create'])->name('packages.create');
+    Route::post('/packages', [PackageController::class, 'store'])->name('packages.store');
+
+    //for read notificaion 
+    Route::get('/notifications/read/{id}', function ($id) {
+        $notification = auth()->user()->notifications()->findOrFail($id);
+
+        // notifaction mark as read
+        $notification->markAsRead();
+
+        // than send to the action url
+        return redirect($notification->data['action_url']);
+    })->name('notifications.read');
 
 });

@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('content')
-    <div class="auth-card">
+    <div class="auth-card d-block justify-content-center align-content-center">
         <h3 class="text-center fw-bold mb-4">Sign In</h3>
 
         <a href="{{ url('auth/google') }}" class="btn btn-google w-100 py-2 mb-3">

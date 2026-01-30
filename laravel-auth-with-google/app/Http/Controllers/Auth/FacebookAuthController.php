@@ -23,7 +23,7 @@ class FacebookAuthController extends Controller
     {
         try {
             $facebookUser = Socialite::driver('facebook')->user();
-            // dd($facebookUser);
+            dd($facebookUser);
 
             // Logic: Find existing user by email
             $user = User::where('facebook_id', $facebookUser->id)
